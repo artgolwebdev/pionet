@@ -15,7 +15,7 @@ interface Container {
 
 export class ApiService {
 
-  baseURL = "http://test-api.marvilix.com/container/";
+  baseURL = "";
 
   constructor(private httpClient : HttpClient ) { }
 
