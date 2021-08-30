@@ -1,0 +1,28 @@
+.title-small{
+    font-weight: 300;
+    margin-top: 60px;
+    margin-bottom: -30px;
+}
+
+.title-big{
+    font-size:55px;
+    font-weight: 700;
+    position: relative;
+    color: #001348;
+}
+
+.title-big::before{
+    content:'';
+    position:absolute;
+    top: 60px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background:#00D3FF;
+    width:80px;
+    height: 2px;
+}
+
+.text{
+    font-size:16px;
+    margin-top:50px;
+}

@@ -1,0 +1,56 @@
+<ul class="inputs">
+    <li>
+        <input type="text" placeholder="חיפוש מספר התרה" #xnumber >
+        <input type="button" (click)="getData(xnumber.value)">
+    </li>
+    <li><input type="text" placeholder="חיפוש מזהה עסקה"><input type="button"></li>
+    <li><input type="text" placeholder="מספר מכולה"><input type="button"></li>
+  </ul>
+  
+  <div *ngIf="containers.length!=0" class="container-wrapper">
+        <div>
+            <p>אני מעוניין לקבל מסרון לנייד<br> כאשר המכולה מגיעה</p>
+            <input type="text" placeholder="מספר נייד" #phone>
+            <input type="button" value="שלח" (click)="SMS(phone.value)">
+        </div>
+        <div>
+            <ul>
+                <li>
+                    <span>סוג טיפול:</span>
+                 {{ containers.type }}
+                </li>
+                <li>
+                    <span>מסוכן:</span>
+                    {{ containers.dangerous }}
+                </li>
+                <li>
+                    <span>צפויה להגיע למסוף אשדוד/חיפה:</span>
+                    {{ containers.dueDate  * 1000 | date }}
+                </li>
+                <li>
+                    <span>סטטוס מכס:</span>
+                    {{ containers.manifest }}
+                </li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li>
+                    <span>מכולה מספר:</span>
+                    <span class="blue">{{ containers.containerID }}</span>
+                </li>
+                <li>
+                    <span>גודל:</span>
+                    {{ containers.size }}
+                </li>
+                <li>
+                    <span>סוג:</span>
+                    {{ containers.treatment }}
+                </li>
+                <li>
+                    <span>מצהר:</span>
+                    {{ containers.customsStatus }}
+                </li>
+            </ul>
+        </div>
+  </div>
